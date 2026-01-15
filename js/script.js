@@ -126,8 +126,53 @@ setTimeout(addLog, 1000);
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
-        navbar.classList.add('bg-black/80', 'backdrop-blur-md', 'border-b', 'border-white/10');
+        navbar.classList.add('backdrop-blur-md', 'border-b', 'border-black/5', 'dark:border-white/10');
+        navbar.style.backgroundColor = 'var(--nav-scroll-bg)';
     } else {
-        navbar.classList.remove('bg-black/80', 'backdrop-blur-md', 'border-b', 'border-white/10');
+        navbar.classList.remove('backdrop-blur-md', 'border-b', 'border-black/5', 'dark:border-white/10');
+        navbar.style.backgroundColor = 'transparent';
+    }
+});
+
+// --- THEME TOGGLE LOGIC ---
+const themeToggleBtn = document.getElementById('theme-toggle');
+const lightIcon = document.getElementById('theme-toggle-light-icon');
+const darkIcon = document.getElementById('theme-toggle-dark-icon');
+
+// Check local storage or system preference
+if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    // Note: User requested light mode default, but if they explicitly set dark previously, or if we want to honor system pref initially (optional), we can do this.
+    // However, per request "light theme should be default", we can prioritize light if no stored pref.
+    // Let's stick to standard behavior: if stored dark -> dark. If no stored -> light (default).
+}
+
+// Function to set theme
+function setTheme(isDark) {
+    if (isDark) {
+        document.documentElement.classList.add('dark');
+        lightIcon.classList.remove('hidden');
+        darkIcon.classList.add('hidden');
+        localStorage.setItem('color-theme', 'dark');
+    } else {
+        document.documentElement.classList.remove('dark');
+        lightIcon.classList.add('hidden');
+        darkIcon.classList.remove('hidden');
+        localStorage.setItem('color-theme', 'light');
+    }
+}
+
+// Initial Load - Default to Light if no preference
+if (localStorage.getItem('color-theme') === 'dark') {
+    setTheme(true);
+} else {
+    setTheme(false); // Default Light
+}
+
+// Toggle Event
+themeToggleBtn.addEventListener('click', () => {
+    if (document.documentElement.classList.contains('dark')) {
+        setTheme(false);
+    } else {
+        setTheme(true);
     }
 });
