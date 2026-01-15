@@ -1,0 +1,75 @@
+body {
+    background-color: #000000;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #000000;
+}
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #ff2d75;
+}
+
+/* Glassmorphism Utilities */
+.glass-panel {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.3s ease;
+}
+
+.text-glow {
+    text-shadow: 0 0 40px rgba(255, 45, 117, 0.5);
+}
+
+.neon-border {
+    box-shadow: 0 0 10px rgba(34, 211, 238, 0.2), inset 0 0 10px rgba(34, 211, 238, 0.1);
+}
+
+/* Timeline connector */
+.timeline-line::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background: linear-gradient(180deg, #ff2d75 0%, #a855f7 50%, #22d3ee 100%);
+    transform: translateX(-50%);
+    box-shadow: 0 0 15px rgba(255, 45, 117, 0.5);
+    opacity: 0.3;
+}
+
+/* Typewriter Cursor */
+.cursor-blink {
+    display: inline-block;
+    width: 8px;
+    height: 18px;
+    background-color: #22d3ee;
+    animation: blink 1s step-end infinite;
+    vertical-align: middle;
+}
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+/* Card 3D transform */
+.card-3d-wrapper {
+    perspective: 1000px;
+}
