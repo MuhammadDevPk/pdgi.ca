@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shipper Solutions | TMS.OS</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class', // Enable class-based dark mode
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        tms: {
+                            pink: '#ff2d75',
+                            cyan: '#22d3ee',
+                            purple: '#a855f7',
+                            glass: 'rgba(255, 255, 255, 0.03)',
+                            border: 'rgba(255, 255, 255, 0.1)',
+                        }
+                    },
+                    backgroundImage: {
+                        'radial-glow': 'radial-gradient(circle at center, var(--tw-gradient-stops))',
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-delayed': 'float 6s ease-in-out 3s infinite',
+                        'pulse-glow': 'pulseGlow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'draw': 'draw 2s ease-in-out forwards',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { opacity: 0.1 },
+                            '50%': { opacity: 0.3 },
+                        },
+                        draw: {
+                            '0%': { strokeDashoffset: '1000' },
+                            '100%': { strokeDashoffset: '0' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="antialiased selection:bg-tms-pink selection:text-white bg-[#F8FAFC] dark:bg-black transition-all duration-700 ease-in-out">
+
+    <!-- Background Ambient Glows (Dark Mode Only) -->
+    <div class="fixed inset-0 z-0 pointer-events-none overflow-hidden opacity-30 dark:opacity-100 transition-opacity duration-500">
+        <div class="absolute top-[-10%] right-[-10%] w-[800px] h-[800px] bg-tms-purple/10 rounded-full blur-[120px] mix-blend-screen animate-pulse-glow"></div>
+        <div class="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-tms-cyan/10 rounded-full blur-[100px] mix-blend-screen animate-pulse-glow" style="animation-delay: 2s;"></div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="fixed top-0 w-full z-50 border-b border-white/5 bg-white/80 dark:bg-transparent backdrop-blur-2xl transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <a href="index.html" class="flex items-center gap-2">
+                    <div class="w-8 h-8 rounded bg-gradient-to-tr from-tms-pink to-tms-purple flex items-center justify-center font-display font-bold text-white text-xl shadow-lg">T</div>
+                    <span class="font-display font-bold text-xl tracking-tight text-slate-900 dark:text-white">TMS<span class="text-tms-cyan">.OS</span></span>
+                </a>
+            </div>
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-700 dark:text-white">
+                <a href="shipper-solutions.html" class="text-tms-pink dark:text-tms-cyan font-bold transition-colors underline decoration-tms-pink underline-offset-4">Shippers</a>
+                <a href="#" class="hover:text-tms-pink dark:hover:text-tms-cyan transition-colors hover:underline hover:decoration-tms-pink hover:underline-offset-4">Carriers</a>
+                <a href="#" class="hover:text-tms-pink dark:hover:text-tms-cyan transition-colors hover:underline hover:decoration-tms-pink hover:underline-offset-4">Brokers</a>
+                <a href="#" class="hover:text-tms-pink dark:hover:text-tms-cyan transition-colors hover:underline hover:decoration-tms-pink hover:underline-offset-4">Pricing</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <button id="theme-toggle" class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-white/10 transition-colors text-slate-900 dark:text-white focus:outline-none">
+                    <!-- Sun Icon (for Dark Mode) -->
+                    <svg id="theme-toggle-light-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    <!-- Moon Icon (for Light Mode) -->
+                    <svg id="theme-toggle-dark-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                </button>
+                <button class="hidden md:block px-5 py-2 rounded-full border border-tms-pink/30 bg-tms-pink/5 dark:bg-transparent text-tms-pink dark:text-white font-medium text-sm hover:bg-tms-pink hover:text-white hover:border-tms-pink transition-all duration-300 shadow-[0_10px_25px_rgba(255,45,117,0.25)] dark:shadow-none dark:hover:shadow-[0_0_30px_rgba(255,45,117,0.4)]">
+                    Access Platform
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="relative z-10 w-full overflow-hidden">
+        
+        <!-- HERO SECTION -->
+        <section class="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden bg-gradient-to-b from-[#F8FAFC] to-white dark:from-black dark:to-black border-b border-slate-100 dark:border-white/5">
+            <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- Left Content -->
+                <div class="space-y-8 relative z-20">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-tms-pink/30 bg-tms-pink/5 text-tms-pink text-xs font-mono mb-4">
+                        <span class="w-2 h-2 rounded-full bg-tms-pink animate-pulse"></span>
+                        PREDICTIVE SUPPLY CHAIN
+                    </div>
+                    
+                    <h1 class="font-display text-5xl md:text-7xl lg:text-7xl font-medium leading-[0.95] tracking-tight text-slate-950 dark:text-white">
+                        Visibility is the <br /> 
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-tms-purple to-tms-cyan font-bold text-glow">New Currency.</span>
+                    </h1>
+                    
+                    <p class="text-lg text-slate-700 dark:text-gray-400 max-w-lg leading-relaxed">
+                        Control your entire logistics network from a single pane of glass. Real-time tracking, automated audits, and predictive exception management.
+                    </p>
+
+                    <div class="flex items-center gap-4 pt-4">
+                        <div class="relative group">
+                            <div class="absolute -inset-0.5 bg-gradient-to-r from-tms-purple to-tms-pink rounded-lg blur opacity-30 group-hover:opacity-75 transition duration-200"></div>
+                            <button class="relative bg-slate-900 dark:bg-black border border-white/10 px-8 py-4 rounded-lg text-white font-medium flex items-center gap-3 group-hover:bg-slate-800 transition-colors shadow-lg dark:shadow-[0_0_20px_rgba(168,85,247,0.3)]">
+                                Schedule Demo
+                                <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Visual: Control Tower Feature -->
+                <div class="relative h-[600px] w-full flex items-center justify-center perspective-1000">
+                    <!-- Glass Card -->
+                    <div class="relative w-full max-w-md bg-white border border-slate-200 shadow-[0_20px_50px_rgba(0,0,0,0.08)] dark:bg-black/40 dark:backdrop-blur-xl dark:border-white/10 dark:shadow-tms-purple/10 rounded-2xl p-8 transform rotate-y-[-5deg] hover:rotate-0 transition-all duration-700">
+                        <div class="flex items-center justify-between mb-8">
+                            <h3 class="font-display font-bold text-xl text-slate-900 dark:text-white">Shipment #82921</h3>
+                            <span class="px-2 py-1 rounded bg-green-500/10 text-green-500 text-xs font-bold border border-green-500/20">IN TRANSIT</span>
+                        </div>
+
+                        <!-- Vertical Timeline -->
+                        <div class="relative space-y-8 pl-4 border-l-2 border-slate-100 dark:border-white/10 ml-2">
+                             <!-- Item 1 -->
+                            <div class="relative group">
+                                <div class="absolute -left-[23px] w-5 h-5 rounded-full bg-slate-900 dark:bg-black border-2 border-tms-purple flex items-center justify-center">
+                                    <svg class="w-3 h-3 text-tms-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                </div>
+                                <div class="pl-4">
+                                    <h4 class="text-sm font-bold text-slate-900 dark:text-white">Order Placed</h4>
+                                    <p class="text-xs text-slate-500 dark:text-gray-500">Jan 12, 09:42 AM</p>
+                                </div>
+                            </div>
+
+                            <!-- Item 2 -->
+                             <div class="relative group">
+                                <div class="absolute -left-[23px] w-5 h-5 rounded-full bg-slate-900 dark:bg-black border-2 border-tms-purple flex items-center justify-center">
+                                    <svg class="w-3 h-3 text-tms-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                </div>
+                                <div class="pl-4">
+                                    <h4 class="text-sm font-bold text-slate-900 dark:text-white">Carrier Assigned</h4>
+                                    <p class="text-xs text-slate-500 dark:text-gray-500">Jan 12, 10:15 AM • Swift Transport</p>
+                                </div>
+                            </div>
+
+                             <!-- Item 3 (Active) -->
+                             <div class="relative group">
+                                <div class="absolute -left-[23px] w-5 h-5 rounded-full bg-tms-cyan animate-pulse shadow-[0_0_15px_rgba(34,211,238,0.5)]"></div>
+                                <div class="pl-4">
+                                    <h4 class="text-sm font-bold text-tms-cyan">In Transit</h4>
+                                    <p class="text-xs text-tms-cyan/80">Est. Arrival: Today, 4:00 PM</p>
+                                    <div class="mt-2 text-xs font-mono bg-slate-50 dark:bg-white/5 p-2 rounded text-slate-600 dark:text-slate-400 border border-slate-100 dark:border-white/5">
+                                        > Current Speed: 62mph <br>
+                                        > Temp: 34°F (Reefer)
+                                    </div>
+                                </div>
+                            </div>
+
+                             <!-- Item 4 (Future) -->
+                             <div class="relative group opacity-50">
+                                <div class="absolute -left-[23px] w-5 h-5 rounded-full bg-slate-200 dark:bg-white/20 border-2 border-transparent"></div>
+                                <div class="pl-4">
+                                    <h4 class="text-sm font-bold text-slate-400 dark:text-gray-400">Delivered</h4>
+                                    <p class="text-xs text-slate-400 dark:text-gray-600">Pending</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Floating Data Pill -->
+                    <div class="absolute bottom-20 -right-4 z-30 animate-float-delayed hidden md:block">
+                        <div class="glass-panel px-4 py-2 rounded-xl flex items-center gap-3 border-l-4 border-l-tms-cyan bg-white/80 dark:bg-black/60 backdrop-blur shadow-lg">
+                            <div class="w-8 h-8 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                            </div>
+                            <div>
+                                <div class="text-[10px] text-gray-500 dark:text-gray-400 uppercase tracking-wider">Efficiency</div>
+                                <div class="text-sm font-bold text-slate-900 dark:text-white">On Track</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI ROUTE VISUALIZATION -->
+        <section class="py-32 relative bg-slate-50 dark:bg-[#050505] overflow-hidden">
+             <!-- Abstract Map Background -->
+             <div class="absolute inset-0 opacity-10 pointer-events-none">
+                <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" stroke-width="0.5"/>
+                        </pattern>
+                    </defs>
+                    <rect width="100%" height="100%" fill="url(#grid)" />
+                </svg>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-6 relative z-10">
+                <div class="text-center mb-16">
+                    <span class="text-tms-purple font-mono text-sm tracking-widest uppercase">Intelligent Routing</span>
+                    <h2 class="text-3xl md:text-5xl font-display font-bold mt-2 text-slate-900 dark:text-white">Optimized by AI</h2>
+                    <p class="text-slate-600 dark:text-gray-400 mt-4 max-w-2xl mx-auto">Dynamic route adjustments based on real-time traffic, weather, and fuel costs.</p>
+                </div>
+
+                <div class="relative bg-white dark:bg-slate-900/50 rounded-2xl border border-slate-200 dark:border-white/10 shadow-2xl overflow-hidden h-[500px] w-full" id="map-container">
+                    
+                    <!-- SVG Map -->
+                    <svg viewBox="0 0 800 400" class="w-full h-full preserve-3d">
+                        <!-- Path -->
+                        <!-- A curved path from left (Lahore hypothetically) to right (Muhafiz Town hypothetically) -->
+                        <path id="route-path" d="M100,200 C200,100 400,300 700,200" fill="none" stroke="#334155" stroke-width="2" stroke-dasharray="10 10" class="opacity-20" />
+                        
+                        <path id="active-route" d="M100,200 C200,100 400,300 700,200" fill="none" stroke="#22d3ee" stroke-width="4" stroke-linecap="round" stroke-dasharray="800" stroke-dashoffset="800" />
+
+                        <!-- Start Point -->
+                        <g transform="translate(100, 200)">
+                            <circle r="8" fill="#a855f7" class="animate-pulse" />
+                            <circle r="15" fill="#a855f7" opacity="0.2" class="animate-ping" />
+                            <text x="0" y="30" text-anchor="middle" fill="currentColor" class="text-xs font-bold font-mono dark:text-white text-slate-900" style="font-size: 10px;">ORIGIN</text>
+                        </g>
+
+                         <!-- End Point -->
+                         <g transform="translate(700, 200)">
+                            <circle r="8" fill="#ff2d75" />
+                            <text x="0" y="30" text-anchor="middle" fill="currentColor" class="text-xs font-bold font-mono dark:text-white text-slate-900" style="font-size: 10px;">DESTINATION</text>
+                        </g>
+                    </svg>
+
+                    <!-- Overlay UI Elements -->
+                    <div class="absolute top-6 left-6 glass-panel px-4 py-3 rounded-xl border border-white/10 bg-white/90 dark:bg-black/60 backdrop-blur shadow-lg">
+                        <div class="flex items-center gap-3">
+                            <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+                            <span class="text-sm font-mono text-slate-700 dark:text-white">AI Optimization Active</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COST TRANSPARENCY SECTION -->
+        <section class="py-24 relative border-t border-slate-100 dark:border-white/5">
+            <div class="max-w-7xl mx-auto px-6">
+                 <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+                     <div>
+                        <h2 class="text-3xl md:text-5xl font-display font-bold text-slate-900 dark:text-white mb-6">Financial Clarity</h2>
+                        <p class="text-slate-600 dark:text-gray-400 text-lg">Stop overpaying. Our automated procurement and audit tools ensure you pay exactly what was agreed, every time.</p>
+                     </div>
+                     <div class="flex gap-4 justify-end">
+                         <!-- Stat 1 -->
+                         <div class="p-6 bg-white dark:bg-white/5 rounded-2xl border border-slate-200 dark:border-white/10 w-48 text-center">
+                             <div class="text-3xl font-bold text-tms-pink mb-1">15%</div>
+                             <div class="text-xs text-slate-500 dark:text-gray-400 uppercase tracking-wider">Cost Reduction</div>
+                         </div>
+                         <!-- Stat 2 -->
+                         <div class="p-6 bg-white dark:bg-white/5 rounded-2xl border border-slate-200 dark:border-white/10 w-48 text-center">
+                             <div class="text-3xl font-bold text-tms-cyan mb-1">0%</div>
+                             <div class="text-xs text-slate-500 dark:text-gray-400 uppercase tracking-wider">Billing Errors</div>
+                         </div>
+                     </div>
+                 </div>
+
+                 <div class="grid md:grid-cols-2 gap-8">
+                     <!-- Card 1: Automated Procurement -->
+                     <div class="group relative overflow-hidden rounded-2xl p-8 bg-gradient-to-br from-slate-50 to-slate-100 dark:from-white/5 dark:to-transparent border border-slate-200 dark:border-white/10 hover:border-tms-pink/50 transition-all duration-300">
+                        <div class="absolute top-0 right-0 p-8 opacity-20 group-hover:opacity-40 transition-opacity">
+                            <svg class="w-32 h-32 text-tms-pink" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div> 
+                        <div class="relative z-10">
+                             <div class="w-12 h-12 rounded-lg bg-pink-500/10 flex items-center justify-center mb-6 text-tms-pink">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                            </div>
+                            <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">Automated Procurement</h3>
+                            <p class="text-slate-600 dark:text-gray-400 mb-6 leading-relaxed">
+                                Instantly benchmark spot rates against contract rates. Our AI negotiates with carriers in the background to secure the best capacity at the lowest price.
+                            </p>
+                            <ul class="space-y-3 mb-8">
+                                <li class="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300">
+                                    <svg class="w-4 h-4 text-tms-pink" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    Spot Market Integration
+                                </li>
+                                <li class="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300">
+                                    <svg class="w-4 h-4 text-tms-pink" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    Waterfall Tendering
+                                </li>
+                            </ul>
+                        </div>
+                     </div>
+
+                     <!-- Card 2: Freight Audit & Pay -->
+                     <div class="group relative overflow-hidden rounded-2xl p-8 bg-gradient-to-br from-slate-50 to-slate-100 dark:from-white/5 dark:to-transparent border border-slate-200 dark:border-white/10 hover:border-tms-cyan/50 transition-all duration-300">
+                        <div class="absolute top-0 right-0 p-8 opacity-20 group-hover:opacity-40 transition-opacity">
+                             <svg class="w-32 h-32 text-tms-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                        </div>
+                        <div class="relative z-10">
+                             <div class="w-12 h-12 rounded-lg bg-cyan-500/10 flex items-center justify-center mb-6 text-tms-cyan">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg>
+                            </div>
+                            <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">Freight Audit & Pay</h3>
+                            <p class="text-slate-600 dark:text-gray-400 mb-6 leading-relaxed">
+                                Eliminate duplicate invoices and billing errors. Our system automatically validates every invoice against the quoted rate and proofs of delivery.
+                            </p>
+                             <ul class="space-y-3 mb-8">
+                                <li class="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300">
+                                    <svg class="w-4 h-4 text-tms-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    Automatic Invoice Matching
+                                </li>
+                                <li class="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300">
+                                    <svg class="w-4 h-4 text-tms-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    Discrepancy Alerts
+                                </li>
+                            </ul>
+                        </div>
+                     </div>
+                 </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="border-t border-black/5 dark:border-white/10 py-12 bg-slate-50 dark:bg-black transition-colors duration-300">
+            <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+                 <div class="flex items-center gap-2">
+                    <div class="w-6 h-6 rounded bg-gradient-to-tr from-tms-pink to-tms-purple flex items-center justify-center font-display font-bold text-white text-xs">T</div>
+                    <span class="font-display font-bold text-lg tracking-tight">TMS.OS</span>
+                </div>
+                <div class="text-gray-500 text-sm">
+                    &copy; 2026 TMS Omni-System. All rights reserved.
+                </div>
+                <div class="flex gap-6">
+                    <a href="#" class="text-gray-500 hover:text-black dark:hover:text-white transition-colors"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg></a>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- Inline Script for Page Specific Logic -->
+    <script>
+        // Copy-pasted/Adapted logic from index.html's script.js for consistency + new logic
+        
+        // Theme Toggle
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+        const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            themeToggleLightIcon.classList.remove('hidden');
+        } else {
+            themeToggleDarkIcon.classList.remove('hidden');
+        }
+
+        themeToggleBtn.addEventListener('click', function() {
+            themeToggleDarkIcon.classList.toggle('hidden');
+            themeToggleLightIcon.classList.toggle('hidden');
+
+            if (localStorage.getItem('color-theme')) {
+                if (localStorage.getItem('color-theme') === 'light') {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                }
+            } else {
+                if (document.documentElement.classList.contains('dark')) {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                } else {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                }
+            }
+        });
+
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+             if (window.scrollY > 50) {
+                 navbar.classList.add('bg-white/90', 'dark:bg-black/90', 'shadow-lg');
+                 navbar.classList.remove('bg-white/80', 'dark:bg-transparent');
+             } else {
+                 navbar.classList.remove('bg-white/90', 'dark:bg-black/90', 'shadow-lg');
+                 navbar.classList.add('bg-white/80', 'dark:bg-transparent');
+             }
+        });
+
+        // GSAP Animations
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Control Tower Animations
+        gsap.from(".perspective-1000 > div", {
+            scrollTrigger: {
+                trigger: ".perspective-1000",
+                start: "top 80%",
+            },
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            ease: "power3.out"
+        });
+
+        // Route Drawing Animation
+        gsap.to("#active-route", {
+            strokeDashoffset: 0,
+            duration: 3,
+            ease: "power2.inOut",
+            scrollTrigger: {
+                trigger: "#map-container",
+                start: "top 70%",
+                toggleActions: "play none none reverse"
+            }
+        });
+
+        // Cost Transparency Cards Stagger
+        gsap.from(".grid > div.group", {
+            scrollTrigger: {
+                trigger: ".grid > div.group",
+                start: "top 85%",
+            },
+            y: 30,
+            opacity: 0,
+            stagger: 0.2,
+            duration: 0.8,
+            ease: "power2.out"
+        });
+
+    </script>
+
+</body>
+</html>
