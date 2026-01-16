@@ -176,3 +176,24 @@ themeToggleBtn.addEventListener('click', () => {
         setTheme(true);
     }
 });
+
+// --- MOBILE MENU LOGIC ---
+const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+const closeMenuBtn = document.getElementById('close-menu-btn');
+
+if (mobileMenuBtn && mobileMenu && closeMenuBtn) {
+    mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.remove('hidden');
+        setTimeout(() => {
+            mobileMenu.classList.remove('opacity-0', 'translate-x-full');
+        }, 10);
+    });
+
+    closeMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.add('opacity-0', 'translate-x-full');
+        setTimeout(() => {
+            mobileMenu.classList.add('hidden');
+        }, 300);
+    });
+}
