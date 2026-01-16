@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intelligence Hub | TMS.OS</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class', // Enable class-based dark mode
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        tms: {
+                            pink: '#ff2d75',
+                            cyan: '#22d3ee',
+                            purple: '#a855f7',
+                            glass: 'rgba(255, 255, 255, 0.03)',
+                            border: 'rgba(255, 255, 255, 0.1)',
+                        }
+                    },
+                    backgroundImage: {
+                        'radial-glow': 'radial-gradient(circle at center, var(--tw-gradient-stops))',
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-delayed': 'float 6s ease-in-out 3s infinite',
+                        'pulse-glow': 'pulseGlow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'draw': 'draw 2s ease-in-out forwards',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { opacity: 0.1 },
+                            '50%': { opacity: 0.3 },
+                        },
+                        draw: {
+                            '0%': { strokeDashoffset: '1000' },
+                            '100%': { strokeDashoffset: '0' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Custom Charts Styles */
+        .chart-line {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: drawLine 3s ease-out forwards;
+        }
+        @keyframes drawLine {
+            to { stroke-dashoffset: 0; }
+        }
+
+        .chart-glow-pink {
+            filter: drop-shadow(0 0 4px rgba(255, 45, 117, 0.5));
+        }
+        .chart-glow-cyan {
+            filter: drop-shadow(0 0 4px rgba(34, 211, 238, 0.5));
+        }
+
+        /* Donut Chart */
+        .donut-segment {
+            transition: stroke-dasharray 0.5s ease;
+        }
+        
+        /* Terminal Scrollbar */
+        .terminal-scroll::-webkit-scrollbar {
+            width: 8px;
+        }
+        .terminal-scroll::-webkit-scrollbar-track {
+            background: #1e293b; 
+        }
+        .terminal-scroll::-webkit-scrollbar-thumb {
+            background: #475569; 
+            border-radius: 4px;
+        }
+        .terminal-scroll::-webkit-scrollbar-thumb:hover {
+            background: #64748b; 
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-tms-pink selection:text-white bg-[#F8FAFC] dark:bg-black transition-all duration-700 ease-in-out">
+
+    <!-- Background Ambient Glows (Dark Mode Only) -->
+    <div class="fixed inset-0 z-0 pointer-events-none overflow-hidden opacity-30 dark:opacity-100 transition-opacity duration-500">
+        <div class="absolute top-[-10%] right-[-10%] w-[800px] h-[800px] bg-tms-purple/10 rounded-full blur-[120px] mix-blend-screen animate-pulse-glow"></div>
+        <div class="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-tms-cyan/10 rounded-full blur-[100px] mix-blend-screen animate-pulse-glow" style="animation-delay: 2s;"></div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="fixed top-0 w-full z-50 border-b border-white/5 bg-white/80 dark:bg-transparent backdrop-blur-2xl transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <a href="index.html" class="flex items-center gap-2">
+                    <div class="w-8 h-8 rounded bg-gradient-to-tr from-tms-pink to-tms-purple flex items-center justify-center font-display font-bold text-white text-xl shadow-lg">T</div>
+                    <span class="font-display font-bold text-xl tracking-tight text-slate-900 dark:text-white">TMS<span class="text-tms-cyan">.OS</span></span>
+                </a>
+            </div>
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-700 dark:text-white">
+                <a href="shipper-solutions.html" class="hover:text-tms-pink dark:hover:text-tms-cyan transition-colors hover:underline hover:decoration-tms-pink hover:underline-offset-4">Shippers</a>
+                <a href="#" class="hover:text-tms-pink dark:hover:text-tms-cyan transition-colors hover:underline hover:decoration-tms-pink hover:underline-offset-4">Carriers</a>
+                <a href="#" class="hover:text-tms-pink dark:hover:text-tms-cyan transition-colors hover:underline hover:decoration-tms-pink hover:underline-offset-4">Brokers</a>
+                <a href="intelligence-hub.html" class="text-tms-pink dark:text-tms-cyan font-bold transition-colors underline decoration-tms-pink underline-offset-4">Intelligence</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <button id="theme-toggle" class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-white/10 transition-colors text-slate-900 dark:text-white focus:outline-none">
+                    <!-- Sun Icon (for Dark Mode) -->
+                    <svg id="theme-toggle-light-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    <!-- Moon Icon (for Light Mode) -->
+                    <svg id="theme-toggle-dark-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                </button>
+                <button class="hidden md:block px-5 py-2 rounded-full border border-tms-pink/30 bg-tms-pink/5 dark:bg-transparent text-tms-pink dark:text-white font-medium text-sm hover:bg-tms-pink hover:text-white hover:border-tms-pink transition-all duration-300 shadow-[0_10px_25px_rgba(255,45,117,0.25)] dark:shadow-none dark:hover:shadow-[0_0_30px_rgba(255,45,117,0.4)]">
+                    Access Platform
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="relative z-10 w-full overflow-hidden">
+        
+        <!-- HERO SECTION -->
+        <section class="relative pt-32 pb-16 md:pt-48 md:pb-24 overflow-hidden bg-gradient-to-b from-[#F8FAFC] to-white dark:from-black dark:to-black">
+            <div class="max-w-7xl mx-auto px-6 text-center">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-tms-cyan/30 bg-tms-cyan/5 text-tms-cyan text-xs font-mono mb-6">
+                    <span class="w-2 h-2 rounded-full bg-tms-cyan animate-pulse"></span>
+                    LIVE ANALYTICS
+                </div>
+                
+                <h1 class="font-display text-5xl md:text-7xl font-medium leading-[0.95] tracking-tight text-slate-950 dark:text-white max-w-4xl mx-auto mb-6">
+                    Data-Driven Decisions for the <span class="text-transparent bg-clip-text bg-gradient-to-r from-tms-cyan to-tms-purple font-bold">Modern Fleet.</span>
+                </h1>
+                
+                <p class="text-lg text-slate-700 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed mb-12">
+                    Harness the power of real-time data. Visualize trends, monitor fleet performance, and optimize operations from a single intelligence hub.
+                </p>
+            </div>
+        </section>
+
+        <!-- INTERACTIVE STATS GRID -->
+        <section class="pb-24 relative z-20">
+            <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <!-- Card 1: Revenue Trends -->
+                <div class="bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-2xl p-6 shadow-2xl transition-all duration-300 hover:border-tms-cyan/30 group">
+                    <div class="flex justify-between items-start mb-6">
+                        <div>
+                            <h3 class="text-slate-500 dark:text-gray-400 text-sm font-medium uppercase tracking-wide">Revenue Trends</h3>
+                            <div class="text-3xl font-display font-bold text-slate-900 dark:text-white mt-1">$2.4M</div>
+                            <div class="text-emerald-500 text-xs font-bold mt-1 flex items-center gap-1">
+                                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+                                +12.5% vs last month
+                            </div>
+                        </div>
+                        <div class="p-2 rounded-lg bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-white">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                        </div>
+                    </div>
+                    
+                    <!-- Line Chart -->
+                    <div class="h-32 w-full relative">
+                        <svg class="w-full h-full" viewBox="0 0 300 100" preserveAspectRatio="none">
+                            <defs>
+                                <linearGradient id="gradientReview" x1="0" x2="0" y1="0" y2="1">
+                                    <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.2"/>
+                                    <stop offset="100%" stop-color="#22d3ee" stop-opacity="0"/>
+                                </linearGradient>
+                            </defs>
+                            <path d="M0,100 L0,50 L30,60 L60,40 L90,65 L120,35 L150,45 L180,20 L210,40 L240,15 L270,30 L300,10 L300,100 Z" fill="url(#gradientReview)" class="opacity-50" />
+                            <path d="M0,50 L30,60 L60,40 L90,65 L120,35 L150,45 L180,20 L210,40 L240,15 L270,30 L300,10" fill="none" stroke="#22d3ee" stroke-width="2" class="chart-line chart-glow-cyan" vector-effect="non-scaling-stroke" />
+                            <!-- Active Point -->
+                            <circle cx="300" cy="10" r="4" fill="#22d3ee" class="animate-pulse shadow-[0_0_10px_#22d3ee]" />
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Card 2: Load Stage Summary -->
+                <div class="bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-2xl p-6 shadow-2xl transition-all duration-300 hover:border-tms-purple/30 group">
+                    <div class="flex justify-between items-start mb-6">
+                        <div>
+                            <h3 class="text-slate-500 dark:text-gray-400 text-sm font-medium uppercase tracking-wide">Load Stages</h3>
+                            <div class="text-3xl font-display font-bold text-slate-900 dark:text-white mt-1">1,248</div>
+                            <div class="text-slate-400 text-xs mt-1">Active Shipments</div>
+                        </div>
+                        <div class="p-2 rounded-lg bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-white">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                        </div>
+                    </div>
+
+                    <!-- Donut Chart Wrapper -->
+                    <div class="flex items-center gap-6">
+                        <div class="relative w-28 h-28 flex-shrink-0">
+                            <svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+                                <!-- Background Circle -->
+                                <path class="text-slate-100 dark:text-white/5" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="4" />
+                                <!-- Section 1: Delivered (Purple) -->
+                                <path class="text-tms-purple donut-segment" stroke-dasharray="60, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="4" />
+                                <!-- Section 2: In-Transit (Cyan) -->
+                                <path class="text-tms-cyan donut-segment" stroke-dasharray="25, 100" stroke-dashoffset="-60" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="4" />
+                                 <!-- Section 3: Dispatch (Pink) -->
+                                 <path class="text-tms-pink donut-segment" stroke-dasharray="15, 100" stroke-dashoffset="-85" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="4" />
+                            </svg>
+                            <div class="absolute inset-0 flex items-center justify-center flex-col">
+                                <span class="text-xs font-bold text-slate-400">TOTAL</span>
+                                <span class="text-sm font-bold text-slate-900 dark:text-white">100%</span>
+                            </div>
+                        </div>
+
+                        <!-- Legend -->
+                        <div class="space-y-2 w-full">
+                            <div class="flex items-center justify-between text-xs">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-tms-purple"></span>
+                                    <span class="text-slate-600 dark:text-gray-400">Delivered</span>
+                                </div>
+                                <span class="font-bold text-slate-900 dark:text-white">60%</span>
+                            </div>
+                             <div class="flex items-center justify-between text-xs">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-tms-cyan"></span>
+                                    <span class="text-slate-600 dark:text-gray-400">In-Transit</span>
+                                </div>
+                                <span class="font-bold text-slate-900 dark:text-white">25%</span>
+                            </div>
+                             <div class="flex items-center justify-between text-xs">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-tms-pink"></span>
+                                    <span class="text-slate-600 dark:text-gray-400">Dispatch</span>
+                                </div>
+                                <span class="font-bold text-slate-900 dark:text-white">15%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Carrier Performance -->
+                <div class="bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-2xl p-6 shadow-2xl transition-all duration-300 hover:border-tms-pink/30 group">
+                    <div class="flex justify-between items-start mb-6">
+                        <div>
+                            <h3 class="text-slate-500 dark:text-gray-400 text-sm font-medium uppercase tracking-wide">Carrier Safety</h3>
+                            <div class="text-3xl font-display font-bold text-slate-900 dark:text-white mt-1">98.5</div>
+                            <div class="text-slate-400 text-xs mt-1">Avg. Driver Score</div>
+                        </div>
+                        <div class="p-2 rounded-lg bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-white">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                    </div>
+
+                    <!-- Gauges -->
+                    <div class="space-y-4">
+                        <div class="space-y-1">
+                            <div class="flex justify-between text-xs">
+                                <span class="text-slate-600 dark:text-gray-400 font-medium">On-Time Performance</span>
+                                <span class="text-slate-900 dark:text-white font-bold">99%</span>
+                            </div>
+                            <div class="h-2 w-full bg-slate-100 dark:bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-tms-purple w-[99%] rounded-full"></div>
+                            </div>
+                        </div>
+                         <div class="space-y-1">
+                            <div class="flex justify-between text-xs">
+                                <span class="text-slate-600 dark:text-gray-400 font-medium">Safety Incidents</span>
+                                <span class="text-slate-900 dark:text-white font-bold">0.2%</span>
+                            </div>
+                            <div class="h-2 w-full bg-slate-100 dark:bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-tms-pink w-[1%] rounded-full"></div>
+                            </div>
+                        </div>
+                         <div class="space-y-1">
+                            <div class="flex justify-between text-xs">
+                                <span class="text-slate-600 dark:text-gray-400 font-medium">HOS Compliance</span>
+                                <span class="text-slate-900 dark:text-white font-bold">100%</span>
+                            </div>
+                            <div class="h-2 w-full bg-slate-100 dark:bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-tms-cyan w-[100%] rounded-full"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- LIVE DATA TERMINAL -->
+            <div class="max-w-7xl mx-auto px-6 mt-12">
+                <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden shadow-2xl font-mono text-xs md:text-sm">
+                    <!-- Terminal Header -->
+                    <div class="flex items-center px-4 py-2 bg-slate-800 border-b border-slate-700">
+                        <div class="flex gap-2">
+                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                        </div>
+                        <div class="ml-4 text-slate-400 flex items-center gap-2">
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3"></path></svg>
+                            tms-cli watch --stream events
+                        </div>
+                        <div class="ml-auto text-green-500 flex items-center gap-1">
+                            <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                            CONNECTED
+                        </div>
+                    </div>
+                    
+                    <!-- Terminal Body -->
+                    <div class="h-64 overflow-y-auto p-4 terminal-scroll text-slate-300" id="terminal-output">
+                        <!-- Content will be injected by JS -->
+                        <div class="mb-1"><span class="text-slate-500">[16:09:12]</span> <span class="text-blue-400">INFO</span> System initialized. Waiting for event stream...</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="border-t border-black/5 dark:border-white/10 py-12 bg-slate-50 dark:bg-black transition-colors duration-300">
+            <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+                 <div class="flex items-center gap-2">
+                    <div class="w-6 h-6 rounded bg-gradient-to-tr from-tms-pink to-tms-purple flex items-center justify-center font-display font-bold text-white text-xs">T</div>
+                    <span class="font-display font-bold text-lg tracking-tight">TMS.OS</span>
+                </div>
+                <div class="text-gray-500 text-sm">
+                    &copy; 2026 TMS Omni-System. All rights reserved.
+                </div>
+                <div class="flex gap-6">
+                    <a href="#" class="text-gray-500 hover:text-black dark:hover:text-white transition-colors"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg></a>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- Script -->
+    <script>
+        // Theme Toggle Logic (Same as other pages)
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+        const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            themeToggleLightIcon.classList.remove('hidden');
+        } else {
+            themeToggleDarkIcon.classList.remove('hidden');
+        }
+
+        themeToggleBtn.addEventListener('click', function() {
+            themeToggleDarkIcon.classList.toggle('hidden');
+            themeToggleLightIcon.classList.toggle('hidden');
+            if (localStorage.getItem('color-theme')) {
+                if (localStorage.getItem('color-theme') === 'light') {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                }
+            } else {
+                if (document.documentElement.classList.contains('dark')) {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                } else {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                }
+            }
+        });
+
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+             if (window.scrollY > 50) {
+                 navbar.classList.add('bg-white/90', 'dark:bg-black/90', 'shadow-lg');
+                 navbar.classList.remove('bg-white/80', 'dark:bg-transparent');
+             } else {
+                 navbar.classList.remove('bg-white/90', 'dark:bg-black/90', 'shadow-lg');
+                 navbar.classList.add('bg-white/80', 'dark:bg-transparent');
+             }
+        });
+
+        // Terminal Simulation
+        const terminalOutput = document.getElementById('terminal-output');
+        const eventTypes = [
+            { type: 'INFO', color: 'text-blue-400', msg: 'Vehicle #402 checked into Warehouse A' },
+            { type: 'SUCCESS', color: 'text-green-400', msg: 'Load #8992 Delivered Successfully' },
+            { type: 'WARN', color: 'text-yellow-400', msg: 'Driver #22 approaching HOS limit (30m remaining)' },
+            { type: 'SYSTEM', color: 'text-purple-400', msg: 'Optimized route generated for Load #1021' },
+            { type: 'INFO', color: 'text-blue-400', msg: 'New carrier onboarded: FastLane Logistics' },
+            { type: 'SUCCESS', color: 'text-green-400', msg: 'Payment processed for Invoice #INV-9281' },
+            { type: 'SYSTEM', color: 'text-purple-400', msg: 'Syncing telematics data...' }
+        ];
+
+        function addLog() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString('en-US', { hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' });
+            const event = eventTypes[Math.floor(Math.random() * eventTypes.length)];
+            
+            const line = document.createElement('div');
+            line.className = 'mb-1 opacity-0 animate-fade-in';
+            line.style.animation = 'fadeIn 0.3s forwards';
+            line.innerHTML = `<span class="text-slate-500">[${timeString}]</span> <span class="${event.color}">${event.type}</span> ${event.msg}`;
+            
+            terminalOutput.appendChild(line);
+            
+            // Auto scroll
+            terminalOutput.scrollTop = terminalOutput.scrollHeight;
+
+            // Optional: Limit lines
+            if (terminalOutput.children.length > 50) {
+                terminalOutput.removeChild(terminalOutput.firstChild);
+            }
+        }
+
+        // Add CSS for fade in
+        const style = document.createElement('style');
+        style.innerHTML = `
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(5px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Start Loop
+        setInterval(addLog, 1500);
+        
+        // Initial batch
+        for(let i=0; i<3; i++) { setTimeout(addLog, i * 200); }
+
+    </script>
+</body>
+</html>
