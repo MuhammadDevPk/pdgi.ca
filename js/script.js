@@ -86,8 +86,9 @@ timelineItems.forEach((item, index) => {
 });
 
 // --- TERMINAL SIMULATION ---
+// --- TERMINAL SIMULATION ---
 const terminal = document.getElementById('terminal-window');
-const logs = [
+const defaultLogs = [
     { txt: "Connecting to satellite api [SAT_01]...", color: "text-gray-400" },
     { txt: "Handshake successful. Latency: 12ms", color: "text-green-400" },
     { txt: "Fetching carrier manifest #8292...", color: "text-gray-400" },
@@ -98,6 +99,8 @@ const logs = [
     { txt: "Syncing with ERP...", color: "text-gray-400" },
     { txt: "Invoice #9921 generated automatically.", color: "text-purple-400" }
 ];
+
+const logs = window.termLogs || defaultLogs;
 
 let logIndex = 0;
 
