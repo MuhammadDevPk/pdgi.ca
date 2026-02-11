@@ -140,8 +140,8 @@
     <!-- HEADER -->
     <header class="relative pt-32 pb-20 overflow-hidden">
         <div class="max-w-7xl mx-auto px-6 text-center">
-            <h1 class="font-display text-4xl md:text-6xl font-bold mb-6 text-slate-900 dark:text-white">Seamless <span class="text-tms-cyan">Integrations</span></h1>
-            <p class="text-lg text-slate-600 dark:text-gray-400 max-w-2xl mx-auto">Connect TMS.OS with your favorite tools. Sync data automatically and eliminate double entry.</p>
+            <h1 class="font-display text-4xl md:text-6xl font-bold mb-6 text-slate-900 dark:text-white">Integrations That Keep Your <span class="text-tms-cyan">Fleet Flowing</span></h1>
+            <p class="text-lg text-slate-600 dark:text-gray-400 max-w-2xl mx-auto">Connect TMS.OS to the accounting, fuel, telematics and back-office tools you already use — automate invoicing, sync fuel spend, and keep data tidy across systems.</p>
         </div>
     </header>
 
@@ -149,115 +149,198 @@
     <main class="relative z-10 pb-24">
         <div class="max-w-7xl mx-auto px-6">
             
-            <!-- Category Tabs -->
-            <div class="flex flex-wrap justify-center gap-2 mb-12">
-                <button class="px-6 py-2 rounded-full bg-slate-900 text-white dark:bg-white dark:text-black font-medium text-sm">All</button>
-                <button class="px-6 py-2 rounded-full border border-slate-200 dark:border-white/10 hover:bg-slate-50 dark:hover:bg-white/5 text-slate-600 dark:text-white transition-colors text-sm">Accounting</button>
-                <button class="px-6 py-2 rounded-full border border-slate-200 dark:border-white/10 hover:bg-slate-50 dark:hover:bg-white/5 text-slate-600 dark:text-white transition-colors text-sm">ELD / GPS</button>
-                <button class="px-6 py-2 rounded-full border border-slate-200 dark:border-white/10 hover:bg-slate-50 dark:hover:bg-white/5 text-slate-600 dark:text-white transition-colors text-sm">Factoring</button>
-                <button class="px-6 py-2 rounded-full border border-slate-200 dark:border-white/10 hover:bg-slate-50 dark:hover:bg-white/5 text-slate-600 dark:text-white transition-colors text-sm">Load Boards</button>
+            <!-- Intro Paragraph -->
+            <div class="max-w-3xl mx-auto text-center mb-20">
+                <p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
+                    TMS.OS is built to play nicely with your existing stack. Whether you use QuickBooks for accounting, a third-party telematics provider for GPS, or a fuel network for card processing, our integrations eliminate manual work and reduce errors so your team can focus on operations.
+                </p>
             </div>
 
             <!-- Integrations Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- QuickBooks -->
-                <div class="group relative bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 shadow-sm backdrop-blur-xl rounded-2xl p-8 hover:-translate-y-1 transition-transform duration-300">
-                    <div class="h-16 w-16 mb-6 rounded-xl bg-[#2CA01C]/10 flex items-center justify-center">
-                        <span class="font-bold text-2xl text-[#2CA01C]">qb</span>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
+                <!-- Accounting & Billing -->
+                <div class="p-8 rounded-3xl bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 shadow-sm backdrop-blur-xl">
+                    <div class="w-12 h-12 rounded-xl bg-green-500/10 flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">QuickBooks Online</h3>
-                    <p class="text-slate-500 dark:text-gray-400 text-sm mb-6 leading-relaxed">
-                        The #1 accounting software. Sync invoices, expenses, and driver payments automatically.
-                    </p>
-                    <button class="w-full py-2.5 rounded-lg border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white font-medium hover:bg-slate-50 dark:hover:bg-white/5 transition-colors text-sm">
-                        Connect
-                    </button>
+                    <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">Accounting & Billing</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3 text-slate-600 dark:text-slate-400 text-sm">
+                            <svg class="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            QuickBooks Online sync: push invoices, customer mappings, and payments automatically.
+                        </li>
+                        <li class="flex items-start gap-3 text-slate-600 dark:text-slate-400 text-sm">
+                            <svg class="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            CSV and Excel exports for legacy or offline accounting.
+                        </li>
+                        <li class="flex items-start gap-3 text-slate-600 dark:text-slate-400 text-sm">
+                            <svg class="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Weekly billing alignment — PDGI’s fuel invoices map to your accounting flows.
+                        </li>
+                        <li class="flex items-start gap-3 text-slate-600 dark:text-slate-400 text-sm">
+                            <svg class="w-5 h-5 text-green-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Line-item transaction export for fast reconciliation.
+                        </li>
+                    </ul>
                 </div>
 
-                <!-- Samsara -->
-                <div class="group relative bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 shadow-sm backdrop-blur-xl rounded-2xl p-8 hover:-translate-y-1 transition-transform duration-300">
-                    <div class="h-16 w-16 mb-6 rounded-xl bg-[#0F1836]/10 dark:bg-white/10 flex items-center justify-center">
-                         <span class="font-bold text-2xl text-[#0F1836] dark:text-white">S</span>
+                <!-- Fuel & Payment Networks -->
+                <div class="p-8 rounded-3xl bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 shadow-sm backdrop-blur-xl">
+                    <div class="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Samsara</h3>
-                    <p class="text-slate-500 dark:text-gray-400 text-sm mb-6 leading-relaxed">
-                        Real-time GPS tracking and ELD compliance data synced directly to your dispatch board.
-                    </p>
-                    <button class="w-full py-2.5 rounded-lg border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white font-medium hover:bg-slate-50 dark:hover:bg-white/5 transition-colors text-sm">
-                        Connect
-                    </button>
+                    <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">Fuel & Payment Networks</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3 text-slate-600 dark:text-slate-400 text-sm">
+                            <svg class="w-5 h-5 text-blue-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Fuel card providers and merchant network integrations for accurate merchant discounts.
+                        </li>
+                        <li class="flex items-start gap-3 text-slate-600 dark:text-slate-400 text-sm">
+                            <svg class="w-5 h-5 text-blue-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Consolidated billing and tokenized card handling.
+                        </li>
+                        <li class="flex items-start gap-3 text-slate-600 dark:text-slate-400 text-sm">
+                            <svg class="w-5 h-5 text-blue-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Line-by-line fuel transaction data (station, amount, card, driver).
+                        </li>
+                    </ul>
                 </div>
 
-                <!-- Motive -->
-                <div class="group relative bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 shadow-sm backdrop-blur-xl rounded-2xl p-8 hover:-translate-y-1 transition-transform duration-300">
-                    <div class="h-16 w-16 mb-6 rounded-xl bg-black/10 dark:bg-white/10 flex items-center justify-center">
-                         <span class="font-bold text-2xl text-black dark:text-white">M</span>
+                <!-- GPS / Telematics & Tracking -->
+                <div class="p-8 rounded-3xl bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 shadow-sm backdrop-blur-xl">
+                    <div class="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path></svg>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Motive</h3>
-                    <p class="text-slate-500 dark:text-gray-400 text-sm mb-6 leading-relaxed">
-                        Formerly KeepTruckin. Integrated safety scores, dashcam footage, and HOS logs.
-                    </p>
-                    <button class="w-full py-2.5 rounded-lg border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white font-medium hover:bg-slate-50 dark:hover:bg-white/5 transition-colors text-sm">
-                        Connect
-                    </button>
+                    <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">GPS / Telematics & Tracking</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3 text-slate-600 dark:text-slate-400 text-sm">
+                            <svg class="w-5 h-5 text-purple-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Consume live GPS feeds or telemetry to improve ETAs and reduce check calls.
+                        </li>
+                        <li class="flex items-start gap-3 text-slate-600 dark:text-slate-400 text-sm">
+                            <svg class="w-5 h-5 text-purple-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Triggered status updates from geofenced events (arrive/depart).
+                        </li>
+                        <li class="flex items-start gap-3 text-slate-600 dark:text-slate-400 text-sm">
+                            <svg class="w-5 h-5 text-purple-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Map-based load tracking in the web dispatch board.
+                        </li>
+                    </ul>
                 </div>
 
-                <!-- DAT -->
-                <div class="group relative bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 shadow-sm backdrop-blur-xl rounded-2xl p-8 hover:-translate-y-1 transition-transform duration-300">
-                    <div class="h-16 w-16 mb-6 rounded-xl bg-blue-600/10 flex items-center justify-center">
-                         <span class="font-bold text-2xl text-blue-600">DAT</span>
+                <!-- API & Data Exports -->
+                <div class="p-8 rounded-3xl bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 shadow-sm backdrop-blur-xl">
+                    <div class="w-12 h-12 rounded-xl bg-tms-cyan/10 flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-tms-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">DAT Load Board</h3>
-                    <p class="text-slate-500 dark:text-gray-400 text-sm mb-6 leading-relaxed">
-                        Post your trucks and find loads instantly. Rate insights and market trends integrated.
-                    </p>
-                    <button class="w-full py-2.5 rounded-lg border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white font-medium hover:bg-slate-50 dark:hover:bg-white/5 transition-colors text-sm">
-                        Connect
-                    </button>
-                </div>
-
-                <!-- RTS -->
-                <div class="group relative bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 shadow-sm backdrop-blur-xl rounded-2xl p-8 hover:-translate-y-1 transition-transform duration-300">
-                    <div class="h-16 w-16 mb-6 rounded-xl bg-green-600/10 flex items-center justify-center">
-                        <span class="font-bold text-2xl text-green-600">RTS</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">RTS Financial</h3>
-                    <p class="text-slate-500 dark:text-gray-400 text-sm mb-6 leading-relaxed">
-                        Factoring made easy. Submit invoices directly from TMS.OS and get paid fast.
-                    </p>
-                    <button class="w-full py-2.5 rounded-lg border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white font-medium hover:bg-slate-50 dark:hover:bg-white/5 transition-colors text-sm">
-                        Connect
-                    </button>
-                </div>
-
-                <!-- Slack -->
-                <div class="group relative bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 shadow-sm backdrop-blur-xl rounded-2xl p-8 hover:-translate-y-1 transition-transform duration-300">
-                    <div class="h-16 w-16 mb-6 rounded-xl bg-purple-600/10 flex items-center justify-center">
-                         <svg class="w-8 h-8 text-purple-600" fill="currentColor" viewBox="0 0 24 24"><path d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zM6.313 15.165a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.52v-6.315zm8.852-5.05a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1 2.521-2.52h6.313A2.528 2.528 0 0 1 24 12.636a2.528 2.528 0 0 1-2.52 2.521h-6.313v-5.04zm-1.25 2.521a2.527 2.527 0 0 1-2.521 2.521 2.527 2.527 0 0 1-2.521-2.521V6.313A2.528 2.528 0 0 1 11.394 0a2.528 2.528 0 0 1 2.521 2.52v8.868z"/></svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Slack</h3>
-                    <p class="text-slate-500 dark:text-gray-400 text-sm mb-6 leading-relaxed">
-                        Get dispatch notifications, delivery alerts, and system warnings directly in your team's chat.
-                    </p>
-                    <button class="w-full py-2.5 rounded-lg border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white font-medium hover:bg-slate-50 dark:hover:bg-white/5 transition-colors text-sm">
-                        Connect
-                    </button>
+                    <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">API & Data Exports</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3 text-slate-600 dark:text-slate-400 text-sm">
+                            <svg class="w-5 h-5 text-tms-cyan shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            REST API for custom integrations (load status, driver updates, invoices).
+                        </li>
+                        <li class="flex items-start gap-3 text-slate-600 dark:text-slate-400 text-sm">
+                            <svg class="w-5 h-5 text-tms-cyan shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Webhooks for real-time event notifications.
+                        </li>
+                        <li class="flex items-start gap-3 text-slate-600 dark:text-slate-400 text-sm">
+                            <svg class="w-5 h-5 text-tms-cyan shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Scheduled exports (daily/weekly) for BI and ERP systems.
+                        </li>
+                    </ul>
                 </div>
             </div>
+
+            <!-- How it Works & Benefits -->
+            <div class="grid md:grid-cols-2 gap-12 mb-24">
+                <div class="space-y-8">
+                    <h2 class="text-3xl font-display font-bold text-slate-900 dark:text-white underline decoration-tms-pink decoration-4 underline-offset-8">How Integrations Work</h2>
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="w-10 h-10 rounded-full bg-slate-200 dark:bg-white/10 flex items-center justify-center font-bold text-slate-900 dark:text-white shrink-0">1</div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 dark:text-white">Map Your Systems</h4>
+                                <p class="text-sm text-slate-600 dark:text-slate-400">Define fields (QuickBooks customers, accounting codes, GPS device IDs).</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-10 h-10 rounded-full bg-slate-200 dark:bg-white/10 flex items-center justify-center font-bold text-slate-900 dark:text-white shrink-0">2</div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 dark:text-white">Enable Sync Rules</h4>
+                                <p class="text-sm text-slate-600 dark:text-slate-400">Set up auto-invoice, export schedules, and webhook triggers.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-10 h-10 rounded-full bg-slate-200 dark:bg-white/10 flex items-center justify-center font-bold text-slate-900 dark:text-white shrink-0">3</div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 dark:text-white">Monitor and Refine</h4>
+                                <p class="text-sm text-slate-600 dark:text-slate-400">Logs and reconciliation tools make it easy to catch mismatches.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-8">
+                    <h2 class="text-3xl font-display font-bold text-slate-900 dark:text-white underline decoration-tms-cyan decoration-4 underline-offset-8">Benefits</h2>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3 text-slate-600 dark:text-slate-400">
+                            <div class="w-6 h-6 rounded-full bg-tms-pink/10 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-4 h-4 text-tms-pink" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            </div>
+                            Reduce duplicate data entry and reconciliation time.
+                        </li>
+                        <li class="flex items-center gap-3 text-slate-600 dark:text-slate-400">
+                            <div class="w-6 h-6 rounded-full bg-tms-pink/10 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-4 h-4 text-tms-pink" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            </div>
+                            Faster invoice cycle and more accurate accounting.
+                        </li>
+                        <li class="flex items-center gap-3 text-slate-600 dark:text-slate-400">
+                            <div class="w-6 h-6 rounded-full bg-tms-pink/10 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-4 h-4 text-tms-pink" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            </div>
+                            Better operational visibility — fuel spend linked to load and unit.
+                        </li>
+                         <li class="flex items-center gap-3 text-slate-600 dark:text-slate-400">
+                            <div class="w-6 h-6 rounded-full bg-tms-pink/10 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-4 h-4 text-tms-pink" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            </div>
+                            Scalable for small fleets and enterprise accounts.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="max-w-3xl mx-auto mb-24">
+                <h2 class="text-3xl font-display font-bold text-center text-slate-900 dark:text-white mb-12">Frequently Asked Questions</h2>
+                <div class="space-y-6">
+                    <div class="p-6 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-white/10">
+                        <h4 class="font-bold text-slate-900 dark:text-white mb-2">Does PDGI support QuickBooks Desktop?</h4>
+                        <p class="text-sm text-slate-600 dark:text-slate-400">We natively support QuickBooks Online; Desktop can be handled via scheduled CSV exports or third-party sync tools.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-white/10">
+                        <h4 class="font-bold text-slate-900 dark:text-white mb-2">Can I get custom fields in the export?</h4>
+                        <p class="text-sm text-slate-600 dark:text-slate-400">Yes — exports and API payloads can include custom fields for mapping to your back office.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-white/10">
+                        <h4 class="font-bold text-slate-900 dark:text-white mb-2">How secure are integrations?</h4>
+                        <p class="text-sm text-slate-600 dark:text-slate-400">All integrations use encrypted channels, role-based keys, and logging. Card data is tokenized and handled per PCI standards.</p>
+                    </div>
+                </div>
+            </div>
+
 
             <!-- Custom API CTA -->
             <div class="mt-20 p-8 md:p-12 rounded-3xl bg-gradient-to-r from-slate-900 to-slate-800 dark:from-white/10 dark:to-white/5 text-center text-white relative overflow-hidden">
                 <div class="relative z-10">
-                    <h2 class="text-2xl md:text-3xl font-display font-bold mb-4">Don't see what you need?</h2>
-                    <p class="text-slate-300 dark:text-gray-400 mb-8 max-w-xl mx-auto">
-                        TMS.OS offers a comprehensive API to build custom integrations. Developer-friendly documentation, webhooks, and sandbox environment included.
-                    </p>
-                    <div class="flex justify-center gap-4">
-                        <button class="px-6 py-3 rounded-xl bg-white text-black font-bold hover:bg-slate-100 transition-colors">
-                            Read API Docs
+                    <h2 class="text-3xl md:text-4xl font-display font-bold mb-6 italic">Ready to connect your systems?</h2>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <button class="px-8 py-4 rounded-xl bg-white text-black font-bold hover:bg-slate-100 transition-colors shadow-lg">
+                            Request Integration Info
                         </button>
-                        <button class="px-6 py-3 rounded-xl border border-white/20 hover:bg-white/10 transition-colors">
-                            Contact Engineering
+                        <button class="px-8 py-4 rounded-xl border border-white/20 hover:bg-white/10 transition-colors">
+                            Schedule a Technical Call
                         </button>
                     </div>
                 </div>
