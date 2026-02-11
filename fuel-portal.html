@@ -80,19 +80,19 @@
                     <!-- Dropdown Menu -->
                     <div class="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:-translate-y-1">
                         <div class="w-64 bg-white dark:bg-slate-950 border border-slate-200 dark:border-white/10 rounded-2xl shadow-2xl backdrop-blur-3xl overflow-hidden p-2">
-                            <a href="fuel-portal.html" class="block px-4 py-3 rounded-xl hover:bg-slate-50 dark:hover:bg-white/5 transition-colors group/item">
+                            <a href="fuel-portal.html#card-management" class="block px-4 py-3 rounded-xl hover:bg-slate-50 dark:hover:bg-white/5 transition-colors group/item">
                                 <div class="text-slate-900 dark:text-white font-semibold group-hover/item:text-tms-pink mb-0.5">Card Management</div>
                                 <div class="text-xs text-slate-500 dark:text-slate-400">Issue & control cards</div>
                             </a>
-                            <a href="transaction-insights.html" class="block px-4 py-3 rounded-xl hover:bg-slate-50 dark:hover:bg-white/5 transition-colors group/item">
+                            <a href="fuel-portal.html#transaction-insights" class="block px-4 py-3 rounded-xl hover:bg-slate-50 dark:hover:bg-white/5 transition-colors group/item">
                                 <div class="text-slate-900 dark:text-white font-semibold group-hover/item:text-tms-pink mb-0.5">Transaction Insights</div>
                                 <div class="text-xs text-slate-500 dark:text-slate-400">Real-time monitoring</div>
                             </a>
-                            <a href="track-spending.html" class="block px-4 py-3 rounded-xl hover:bg-slate-50 dark:hover:bg-white/5 transition-colors group/item">
+                            <a href="fuel-portal.html#track-spending" class="block px-4 py-3 rounded-xl hover:bg-slate-50 dark:hover:bg-white/5 transition-colors group/item">
                                 <div class="text-slate-900 dark:text-white font-semibold group-hover/item:text-tms-pink mb-0.5">Track Spending</div>
                                 <div class="text-xs text-slate-500 dark:text-slate-400">Analyze fuel costs</div>
                             </a>
-                             <a href="unit-analytics.html" class="block px-4 py-3 rounded-xl hover:bg-slate-50 dark:hover:bg-white/5 transition-colors group/item">
+                             <a href="fuel-portal.html#unit-analytics" class="block px-4 py-3 rounded-xl hover:bg-slate-50 dark:hover:bg-white/5 transition-colors group/item">
                                 <div class="text-slate-900 dark:text-white font-semibold group-hover/item:text-tms-pink mb-0.5">Unit Analytics</div>
                                 <div class="text-xs text-slate-500 dark:text-slate-400">Cost per vehicle</div>
                             </a>
@@ -364,157 +364,254 @@
             </div>
         </section>
 
-        <!-- POWERFUL FEATURES -->
-        <section class="py-24 relative border-b border-slate-100 dark:border-none" id="features">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="text-center mb-16">
-                    <span class="text-tms-cyan font-mono text-sm tracking-wider uppercase">Features</span>
-                    <h2 class="text-3xl md:text-5xl font-display font-bold mt-2 text-slate-900 dark:text-white">Everything you need</h2>
-                    <p class="text-slate-600 dark:text-gray-400 mt-4 max-w-2xl mx-auto">Complete control over your fleet's biggest expense.</p>
+        <!-- SECTION 1: CARD MANAGEMENT -->
+        <section id="card-management" class="py-24 relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+                <div class="order-2 lg:order-1 relative">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-tms-pink/20 to-purple-500/20 blur-[100px]"></div>
+                    <div class="relative glass-panel p-8 rounded-2xl border border-slate-200 dark:border-white/10 shadow-2xl">
+                        <!-- Card Mockup UI -->
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center border-b border-slate-100 dark:border-white/5 pb-4">
+                                <h4 class="font-bold text-slate-900 dark:text-white">Active Cards</h4>
+                                <button class="px-3 py-1 text-xs font-medium bg-tms-pink text-white rounded-full">Issue New Card</button>
+                            </div>
+                            <div class="space-y-3">
+                                <div class="flex items-center justify-between p-3 bg-slate-50 dark:bg-white/5 rounded-lg">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-10 h-6 bg-slate-800 rounded flex items-center justify-center text-[8px] text-white/50">****</div>
+                                        <div>
+                                            <div class="text-sm font-bold text-slate-900 dark:text-white">Unit #104</div>
+                                            <div class="text-xs text-slate-500">Michael A.</div>
+                                        </div>
+                                    </div>
+                                    <div class="text-green-500 text-xs font-bold">ACTIVE</div>
+                                </div>
+                                <div class="flex items-center justify-between p-3 bg-slate-50 dark:bg-white/5 rounded-lg opacity-60">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-10 h-6 bg-slate-800 rounded flex items-center justify-center text-[8px] text-white/50">****</div>
+                                        <div>
+                                            <div class="text-sm font-bold text-slate-900 dark:text-white">Unit #88B</div>
+                                            <div class="text-xs text-slate-500">Sarah J.</div>
+                                        </div>
+                                    </div>
+                                    <div class="text-slate-400 text-xs font-bold">LOCKED</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                
-                <div class="grid md:grid-cols-3 gap-6">
-                    <!-- Feature 1: Corporate Cards -->
-                    <div class="bg-white dark:bg-transparent border border-slate-200 shadow-sm backdrop-blur-xl dark:glass-card dark:border-white/10 dark:shadow-none p-8 rounded-2xl hover:bg-slate-50 dark:hover:bg-white/10 transition-all duration-300 group">
-                        <div class="w-12 h-12 rounded-lg bg-pink-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                            <svg class="w-6 h-6 text-pink-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3 text-slate-950 dark:text-white">Corporate Cards</h3>
-                        <p class="text-slate-600 dark:text-gray-400 text-sm leading-relaxed">Assign physical or virtual cards to drivers. Instant issue and easy cancellation.</p>
+                <div class="order-1 lg:order-2">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 dark:bg-white/10 border border-slate-200 dark:border-white/10 text-slate-600 dark:text-slate-300 text-xs font-mono mb-6">
+                        <span class="w-2 h-2 rounded-full bg-tms-pink"></span> Card Management
                     </div>
+                    <h2 class="font-display text-4xl md:text-5xl font-bold mb-6 text-slate-900 dark:text-white">Card Management Built for Fleets</h2>
+                    <p class="text-lg text-slate-600 dark:text-gray-400 mb-8 leading-relaxed">
+                        Issue fuel cards in minutes, assign them to drivers, and stay in full control. Set rules per card, manage permissions, and instantly take action when something changes — all from one dashboard.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-tms-pink shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span class="text-slate-600 dark:text-gray-400">Create and assign cards to drivers or vehicles</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-tms-pink shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span class="text-slate-600 dark:text-gray-400">Set daily/weekly spend limits and purchase rules</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-tms-pink shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span class="text-slate-600 dark:text-gray-400">Lock, unlock, or replace cards instantly</span>
+                        </li>
+                         <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-tms-pink shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span class="text-slate-600 dark:text-gray-400">Role-based access for dispatch, admin, and accounting teams</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-                    <!-- Feature 2: Spend Controls -->
-                    <div class="bg-white dark:bg-transparent border border-slate-200 shadow-sm backdrop-blur-xl dark:glass-card dark:border-white/10 dark:shadow-none p-8 rounded-2xl hover:bg-slate-50 dark:hover:bg-white/10 transition-all duration-300 group">
-                        <div class="w-12 h-12 rounded-lg bg-pink-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                            <svg class="w-6 h-6 text-pink-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3 text-slate-950 dark:text-white">Spend Controls</h3>
-                        <p class="text-slate-600 dark:text-gray-400 text-sm leading-relaxed">Set daily limits, restrict product categories (fuel only), and block non-fuel merchants.</p>
+        <!-- SECTION 2: TRANSACTION INSIGHTS -->
+        <section id="transaction-insights" class="py-24 bg-slate-50 dark:bg-white/[0.02]">
+            <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+                <div class="order-1">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 dark:bg-white/10 border border-slate-200 dark:border-white/10 text-slate-600 dark:text-slate-300 text-xs font-mono mb-6">
+                        <span class="w-2 h-2 rounded-full bg-tms-cyan"></span> detailed Reporting
                     </div>
-
-                    <!-- Feature 3: Fraud Activity -->
-                    <div class="bg-white dark:bg-transparent border border-slate-200 shadow-sm backdrop-blur-xl dark:glass-card dark:border-white/10 dark:shadow-none p-8 rounded-2xl hover:bg-slate-50 dark:hover:bg-white/10 transition-all duration-300 group">
-                        <div class="w-12 h-12 rounded-lg bg-pink-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                            <svg class="w-6 h-6 text-pink-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                    <h2 class="font-display text-4xl md:text-5xl font-bold mb-6 text-slate-900 dark:text-white">Full Visibility Into Every Transaction</h2>
+                    <p class="text-lg text-slate-600 dark:text-gray-400 mb-8 leading-relaxed">
+                        Every purchase is captured with complete details — where it happened, what was purchased, and who used the card. Get clean reporting that makes audits, reconciliation, and cost tracking easy.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-tms-cyan shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span class="text-slate-600 dark:text-gray-400">Detailed transaction logs with time, location, and merchant data</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-tms-cyan shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span class="text-slate-600 dark:text-gray-400">Detect unusual activity with smart flags and alerts</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-tms-cyan shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span class="text-slate-600 dark:text-gray-400">Filter by date ranger, driver, unit, station, or region</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-tms-cyan shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span class="text-slate-600 dark:text-gray-400">Export reports for accounting and weekly billing review</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="order-2 relative">
+                    <div class="absolute inset-0 bg-gradient-to-tl from-tms-cyan/20 to-blue-500/20 blur-[100px]"></div>
+                    <div class="relative glass-panel rounded-2xl border border-slate-200 dark:border-white/10 shadow-2xl overflow-hidden">
+                        <!-- Tiny Table Mockup -->
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left text-xs">
+                                <thead class="bg-slate-50 dark:bg-white/5 border-b border-slate-200 dark:border-white/10 text-slate-500">
+                                    <tr>
+                                        <th class="px-4 py-3">Driver</th>
+                                        <th class="px-4 py-3">Location</th>
+                                        <th class="px-4 py-3 text-right">Amount</th>
+                                        <th class="px-4 py-3">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-100 dark:divide-white/5">
+                                    <tr class="bg-red-50/50 dark:bg-red-900/10">
+                                        <td class="px-4 py-3 font-medium text-slate-900 dark:text-white">J. Doe</td>
+                                        <td class="px-4 py-3 text-slate-500">Pilot #441</td>
+                                        <td class="px-4 py-3 text-right font-bold text-slate-900 dark:text-white">$45.00</td>
+                                        <td class="px-4 py-3"><span class="text-red-500 font-bold">FLAGGED</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-3 font-medium text-slate-900 dark:text-white">M. Smith</td>
+                                        <td class="px-4 py-3 text-slate-500">Love's #21</td>
+                                        <td class="px-4 py-3 text-right font-bold text-slate-900 dark:text-white">$612.50</td>
+                                        <td class="px-4 py-3"><span class="text-green-500 font-bold">OK</span></td>
+                                    </tr>
+                                     <tr>
+                                        <td class="px-4 py-3 font-medium text-slate-900 dark:text-white">K. Lee</td>
+                                        <td class="px-4 py-3 text-slate-500">TA #88</td>
+                                        <td class="px-4 py-3 text-right font-bold text-slate-900 dark:text-white">$421.20</td>
+                                        <td class="px-4 py-3"><span class="text-green-500 font-bold">OK</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
-                        <h3 class="text-xl font-bold mb-3 text-slate-950 dark:text-white">Fraud Protection</h3>
-                        <p class="text-slate-600 dark:text-gray-400 text-sm leading-relaxed">Real-time alerts for suspicious activity. Geofencing ensures fuel is pivotal to the truck's location.</p>
-                    </div>
-
-                    <!-- Feature 4: IFTA Reports -->
-                    <div class="bg-white dark:bg-transparent border border-slate-200 shadow-sm backdrop-blur-xl dark:glass-card dark:border-white/10 dark:shadow-none p-8 rounded-2xl hover:bg-slate-50 dark:hover:bg-white/10 transition-all duration-300 group">
-                        <div class="w-12 h-12 rounded-lg bg-pink-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                            <svg class="w-6 h-6 text-pink-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3 text-slate-950 dark:text-white">IFTA Reporting</h3>
-                        <p class="text-slate-600 dark:text-gray-400 text-sm leading-relaxed">Automated fuel tax reporting by state. Export reports in one click for quarterly filings.</p>
-                    </div>
-
-                    <!-- Feature 5: Merchant Network -->
-                    <div class="bg-white dark:bg-transparent border border-slate-200 shadow-sm backdrop-blur-xl dark:glass-card dark:border-white/10 dark:shadow-none p-8 rounded-2xl hover:bg-slate-50 dark:hover:bg-white/10 transition-all duration-300 group">
-                        <div class="w-12 h-12 rounded-lg bg-pink-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                            <svg class="w-6 h-6 text-pink-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3 text-slate-950 dark:text-white">98% Acceptance</h3>
-                        <p class="text-slate-600 dark:text-gray-400 text-sm leading-relaxed">Use at Pilot, Flying J, TA, Love's, and thousands of independent truck stops nationwide.</p>
-                    </div>
-
-                    <!-- Feature 6: Mobile App -->
-                     <div class="bg-white dark:bg-transparent border border-slate-200 shadow-sm backdrop-blur-xl dark:glass-card dark:border-white/10 dark:shadow-none p-8 rounded-2xl hover:bg-slate-50 dark:hover:bg-white/10 transition-all duration-300 group">
-                        <div class="w-12 h-12 rounded-lg bg-pink-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                            <svg class="w-6 h-6 text-pink-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3 text-slate-950 dark:text-white">Mobile Companion</h3>
-                        <p class="text-slate-600 dark:text-gray-400 text-sm leading-relaxed">Drivers can find the cheapest fuel nearby, upload receipts, and check card balance in the app.</p>
                     </div>
                 </div>
             </div>
         </section>
-                <!-- Stacked Cards Section -->
-                <div class="mt-28 flex flex-col items-center">
-                    <h3 class="font-display text-2xl font-bold mb-4">Enterprise-grade Security</h3>
-                    <p class="text-slate-600 dark:text-gray-400 mb-12 max-w-2xl text-center">Advanced controls to prevent fraud before it happens.</p>
-                    
-                    <div class="relative w-full max-w-4xl h-[400px]">
-                        <!-- Card 3 (Back) - Alerts -->
-                        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 translate-y-8 scale-90 opacity-40 hover:opacity-100 hover:scale-95 hover:z-20 transition-all duration-500 w-full md:w-2/3 glass-panel p-6 rounded-2xl border-t border-slate-200 dark:border-white/20 select-none">
-                            <div class="flex justify-between items-center mb-4">
-                                <div class="font-bold text-gray-200">System Alerts</div>
-                                <div class="px-2 py-1 rounded bg-red-500/20 text-red-400 text-xs text-center border border-red-500/30">Urgent</div>
-                            </div>
-                            <div class="space-y-3">
-                                <div class="flex items-center gap-3 p-2 rounded hover:bg-white/5 border border-red-500/20 bg-red-500/5">
-                                    <div class="w-8 h-8 rounded-full bg-red-500/10 flex items-center justify-center text-red-500"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg></div>
-                                    <div class="text-sm text-gray-300">Suspicious Activity: Card #4291</div>
-                                </div>
-                                <div class="text-xs text-gray-500 pl-11">Location mismatch engaging smart-lock...</div>
-                            </div>
-                        </div>
 
-                         <!-- Card 2 (Middle) - Controls -->
-                        <div class="absolute top-4 left-1/2 transform -translate-x-1/2 translate-y-12 scale-95 opacity-70 hover:opacity-100 hover:scale-[0.98] hover:z-20 transition-all duration-500 w-full md:w-2/3 glass-panel p-6 rounded-2xl border-t border-white/20 select-none bg-zinc-900/90 shadow-2xl">
-                             <div class="flex justify-between items-center mb-4">
-                                <div class="font-bold text-gray-200">Smart Controls</div>
-                                <div class="px-2 py-1 rounded bg-tms-cyan/20 text-tms-cyan text-xs text-center border border-tms-cyan/30">Active</div>
+        <!-- SECTION 3: TRACK SPENDING -->
+        <section id="track-spending" class="py-24 relative overflow-hidden">
+             <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+                 <div class="order-2 lg:order-1 relative">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-purple-500/20 to-pink-500/20 blur-[100px]"></div>
+                    <div class="relative glass-panel p-8 rounded-2xl border border-slate-200 dark:border-white/10 shadow-2xl">
+                        <!-- Chart Mockup -->
+                        <div class="flex items-end gap-2 h-40 mt-4">
+                            <div class="w-full bg-slate-100 dark:bg-white/5 rounded-t-sm h-[60%] relative group">
+                                <div class="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 text-xs text-slate-500 opacity-0 group-hover:opacity-100 transition-opacity">$4k</div>
                             </div>
-                            <div class="space-y-3 font-mono text-sm">
-                                <div class="flex justify-between items-center border-b border-white/5 pb-2">
-                                    <span class="text-gray-400">Merchant Category</span>
-                                    <span class="text-white">FUEL_ONLY</span>
-                                </div>
-                                <div class="flex justify-between items-center border-b border-white/5 pb-2">
-                                    <span class="text-gray-400">Daily Limit</span>
-                                    <span class="text-white">$800.00</span>
-                                </div>
-                                <div class="flex justify-between items-center">
-                                    <span class="text-gray-400">Time Restriction</span>
-                                    <span class="text-white">06:00 - 22:00</span>
-                                </div>
+                            <div class="w-full bg-slate-100 dark:bg-white/5 rounded-t-sm h-[80%] relative group">
+                                <div class="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 text-xs text-slate-500 opacity-0 group-hover:opacity-100 transition-opacity">$6k</div>
                             </div>
+                            <div class="w-full bg-tms-pink rounded-t-sm h-[40%] relative group shadow-[0_0_20px_rgba(255,45,117,0.4)]">
+                                <div class="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 text-xs text-tms-pink font-bold opacity-100">$2.5k</div>
+                            </div>
+                             <div class="w-full bg-slate-100 dark:bg-white/5 rounded-t-sm h-[70%]"></div>
+                             <div class="w-full bg-slate-100 dark:bg-white/5 rounded-t-sm h-[65%]"></div>
                         </div>
-
-                         <!-- Card 1 (Front) - Fraud Prevention -->
-                        <div class="absolute top-8 left-1/2 transform -translate-x-1/2 translate-y-16 scale-100 z-10 w-full md:w-2/3 glass-panel p-8 rounded-2xl border-l-4 border-l-pink-500 bg-black/80 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-500 hover:-translate-y-2">
-                            <div class="flex justify-between items-center mb-6">
-                                <div>
-                                    <h4 class="font-bold text-xl text-white">Fraud Prevention</h4>
-                                    <p class="text-sm text-gray-400">AI-powered transaction monitoring.</p>
-                                </div>
-                                <div class="w-10 h-10 rounded-full border border-green-500/30 flex items-center justify-center bg-green-500/10">
-                                    <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                </div>
-                            </div>
-                            
-                            <div class="space-y-4">
-                                <div class="flex items-center gap-4 p-3 bg-white/5 rounded-lg border border-white/10">
-                                    <div class="w-10 h-10 rounded bg-blue-500/10 text-blue-500 flex items-center justify-center">
-                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path></svg>
-                                    </div>
-                                    <div class="flex-1">
-                                        <div class="text-sm font-medium text-gray-200">Geofencing Check</div>
-                                        <div class="text-xs text-gray-400">Truck location matches pump</div>
-                                    </div>
-                                    <div class="text-right">
-                                        <div class="text-xs text-green-500 font-bold">MATCH</div>
-                                    </div>
-                                </div>
-                                 <div class="flex items-center gap-4 p-3 bg-white/5 rounded-lg border border-white/10">
-                                     <div class="w-10 h-10 rounded bg-purple-500/10 text-purple-500 flex items-center justify-center">
-                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
-                                     </div>
-                                     <div class="flex-1">
-                                        <div class="text-sm font-medium text-gray-200">Gallon Limit</div>
-                                        <div class="text-xs text-gray-400">Within tank capacity parameters</div>
-                                    </div>
-                                    <div class="text-right">
-                                        <div class="text-xs text-green-500 font-bold">PASS</div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="flex justify-between mt-4 text-xs text-slate-400 font-mono">
+                            <span>MON</span>
+                            <span>TUE</span>
+                            <span>WED</span>
+                            <span>THU</span>
+                            <span>FRI</span>
                         </div>
                     </div>
                 </div>
+                <div class="order-1 lg:order-2">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 dark:bg-white/10 border border-slate-200 dark:border-white/10 text-slate-600 dark:text-slate-300 text-xs font-mono mb-6">
+                        <span class="w-2 h-2 rounded-full bg-purple-500"></span> Cost Control
+                    </div>
+                    <h2 class="font-display text-4xl md:text-5xl font-bold mb-6 text-slate-900 dark:text-white">Track Spending. Prevent Waste. Reduce Fuel Cost.</h2>
+                    <p class="text-lg text-slate-600 dark:text-gray-400 mb-8 leading-relaxed">
+                        Know exactly how much fuel your fleet is using and where your money is going. Set guardrails to prevent overspending, out-of-route fueling, and unauthorized purchases.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-purple-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span class="text-slate-600 dark:text-gray-400">Real-time spend monitoring across all drivers and units</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-purple-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span class="text-slate-600 dark:text-gray-400">Alerts for limit breaches, high-frequency fueling, or suspicious patterns</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-purple-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span class="text-slate-600 dark:text-gray-400">Control spending by time of day, day of week, or location</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
+        </section>
+
+        <!-- SECTION 4: UNIT ANALYTICS -->
+        <section id="unit-analytics" class="py-24 bg-slate-50 dark:bg-white/[0.02]">
+            <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+                <div class="order-1">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 dark:bg-white/10 border border-slate-200 dark:border-white/10 text-slate-600 dark:text-slate-300 text-xs font-mono mb-6">
+                        <span class="w-2 h-2 rounded-full bg-green-500"></span> Performance Data
+                    </div>
+                    <h2 class="font-display text-4xl md:text-5xl font-bold mb-6 text-slate-900 dark:text-white">Unit Analytics That Show True Fleet Performance</h2>
+                    <p class="text-lg text-slate-600 dark:text-gray-400 mb-8 leading-relaxed">
+                        Go beyond basic fuel totals. See performance per power unit and driver — fuel usage trends, cost per mile, and efficiency insights that help you optimize operations.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-green-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span class="text-slate-600 dark:text-gray-400">Fuel cost per unit, per driver, and per mile</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-green-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span class="text-slate-600 dark:text-gray-400">Identify inefficient units and high-cost routes</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-green-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span class="text-slate-600 dark:text-gray-400">Compare units to spot maintenance or driving behavior issues</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="order-2 relative">
+                    <div class="absolute inset-0 bg-gradient-to-tl from-green-500/20 to-tms-cyan/20 blur-[100px]"></div>
+                    <div class="relative glass-panel p-6 rounded-2xl border border-slate-200 dark:border-white/10 shadow-2xl">
+                         <div class="grid grid-cols-2 gap-4">
+                            <div class="p-4 bg-slate-50 dark:bg-white/5 rounded-xl border border-slate-100 dark:border-white/5">
+                                <div class="text-xs text-slate-500 mb-1">Avg MPG</div>
+                                <div class="text-2xl font-bold text-slate-900 dark:text-white">7.2</div>
+                                <div class="text-[10px] text-green-500">+0.4 vs Fleet</div>
+                            </div>
+                             <div class="p-4 bg-slate-50 dark:bg-white/5 rounded-xl border border-slate-100 dark:border-white/5">
+                                <div class="text-xs text-slate-500 mb-1">Cost / Mile</div>
+                                <div class="text-2xl font-bold text-slate-900 dark:text-white">$0.64</div>
+                                <div class="text-[10px] text-green-500">-2% vs Last Mo</div>
+                            </div>
+                            <div class="col-span-2 p-4 bg-slate-50 dark:bg-white/5 rounded-xl border border-slate-100 dark:border-white/5">
+                                <div class="text-xs text-slate-500 mb-1">Efficiency Score</div>
+                                <div class="w-full bg-slate-200 dark:bg-black/40 rounded-full h-2 mt-2">
+                                    <div class="bg-gradient-to-r from-green-500 to-tms-cyan h-2 rounded-full" style="width: 88%"></div>
+                                </div>
+                                <div class="flex justify-between mt-1">
+                                    <span class="text-xs text-slate-900 dark:text-white font-bold">88/100</span>
+                                    <span class="text-[10px] text-slate-400">Excellent</span>
+                                </div>
+                            </div>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         </section>            </div>
         </section>
 
