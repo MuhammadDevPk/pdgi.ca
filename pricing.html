@@ -138,10 +138,14 @@
     </nav>
     
     <!-- HEADER -->
-    <header class="relative pt-32 pb-20 overflow-hidden">
+    <header class="relative pt-32 pb-16 overflow-hidden">
         <div class="max-w-7xl mx-auto px-6 text-center">
-            <h1 class="font-display text-4xl md:text-6xl font-bold mb-6 text-slate-900 dark:text-white">Simple, <span class="text-tms-cyan">Transparent</span> Pricing</h1>
-            <p class="text-lg text-slate-600 dark:text-gray-400 max-w-2xl mx-auto">Start for free. Scale as you grow. No hidden fees.</p>
+            <h1 class="font-display text-4xl md:text-6xl font-bold mb-6 text-slate-900 dark:text-white">Pricing That Fits <span class="text-tms-cyan">Your Fleet</span></h1>
+            <p class="text-lg text-slate-600 dark:text-gray-400 max-w-2xl mx-auto italic">Simple plans for small fleets, scalable options for enterprise. Choose Fuel Portal, TMS, or both — and grow without switching platforms.</p>
+            <div class="mt-8 flex flex-wrap justify-center gap-4">
+                <button onclick="window.location.href='demo.html'" class="px-8 py-4 rounded-xl bg-tms-cyan text-slate-900 font-bold hover:shadow-lg hover:scale-105 transition-all">Request Pricing</button>
+                <button onclick="window.location.href='demo.html'" class="px-8 py-4 rounded-xl border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-white/5 transition-all font-bold">Book a Demo</button>
+            </div>
         </div>
     </header>
 
@@ -150,87 +154,161 @@
         <div class="max-w-7xl mx-auto px-6">
             
             <!-- Pricing Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
                 <!-- Starter Tier -->
-                <div class="rounded-3xl p-8 bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 backdrop-blur-xl relative flex flex-col hover:-translate-y-2 transition-transform duration-300">
-                    <div class="mb-6">
-                        <div class="text-sm font-bold uppercase tracking-wider text-slate-500 dark:text-gray-400 mb-2">Starter</div>
-                        <div class="text-4xl font-display font-bold text-slate-900 dark:text-white mb-2">$0</div>
-                        <div class="text-sm text-slate-500">Free forever for up to 3 units</div>
+                <div class="rounded-3xl p-10 bg-white dark:bg-slate-950 border border-slate-200 dark:border-white/10 relative flex flex-col hover:border-tms-pink/50 transition-all group">
+                    <div class="mb-8">
+                        <div class="text-xs font-mono font-black uppercase tracking-[0.2em] text-slate-400 mb-4">Starter</div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Small fleets getting organized</h3>
+                        <p class="text-sm text-slate-500 italic">Core basics for your operation.</p>
                     </div>
-                    <ul class="space-y-4 mb-8 flex-1">
+                    <ul class="space-y-4 mb-10 flex-1">
                         <li class="flex items-start gap-3 text-sm text-slate-600 dark:text-gray-300">
-                             <svg class="w-5 h-5 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                             Basic Fuel Card Management
+                             <svg class="w-5 h-5 text-tms-pink shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                             Load management + dispatch basics
                         </li>
                         <li class="flex items-start gap-3 text-sm text-slate-600 dark:text-gray-300">
-                             <svg class="w-5 h-5 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                             Driver App (Standard)
+                             <svg class="w-5 h-5 text-tms-pink shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                             Driver app access
                         </li>
-                         <li class="flex items-start gap-3 text-sm text-slate-600 dark:text-gray-300">
-                             <svg class="w-5 h-5 text-green-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                             Standard Reporting
+                        <li class="flex items-start gap-3 text-sm text-slate-600 dark:text-gray-300">
+                             <svg class="w-5 h-5 text-tms-pink shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                             Document uploads (POD/BOL)
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600 dark:text-gray-300">
+                             <svg class="w-5 h-5 text-tms-pink shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                             Basic reporting
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600 dark:text-gray-300">
+                             <svg class="w-5 h-5 text-tms-pink shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                             Email support
                         </li>
                     </ul>
-                    <button class="w-full py-3 rounded-xl border border-slate-900 dark:border-white text-slate-900 dark:text-white font-bold hover:bg-slate-50 dark:hover:bg-white/10 transition-colors">Start Free</button>
+                    <button onclick="window.location.href='demo.html'" class="w-full py-4 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-black font-bold hover:opacity-90 transition-all">Get Started</button>
                 </div>
 
-                <!-- Pro Tier -->
-                <div class="rounded-3xl p-8 bg-slate-900 dark:bg-white text-white dark:text-black border border-transparent shadow-2xl relative flex flex-col hover:-translate-y-2 transition-transform duration-300 scale-105 z-10">
-                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-tms-pink to-tms-purple text-white text-xs font-bold uppercase tracking-widest shadow-lg">Most Popular</div>
-                    <div class="mb-6">
-                        <div class="text-sm font-bold uppercase tracking-wider text-slate-300 dark:text-gray-600 mb-2">Grow</div>
-                        <div class="text-4xl font-display font-bold mb-2">$29</div>
-                        <div class="text-sm text-slate-300 dark:text-gray-600">Per unit / month</div>
+                <!-- Pro Tier (Growth) -->
+                <div class="rounded-3xl p-10 bg-white dark:bg-slate-950 border border-tms-pink shadow-[0_20px_50px_rgba(255,45,117,0.15)] dark:shadow-none relative flex flex-col md:scale-105 z-10">
+                    <div class="absolute -top-4 left-1/2 -track-x-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-tms-pink text-white text-[10px] font-black uppercase tracking-widest shadow-lg">FLEET FAVORITE</div>
+                    <div class="mb-8">
+                        <div class="text-xs font-mono font-black uppercase tracking-[0.2em] text-tms-pink mb-4">Growth</div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Fleets scaling operations</h3>
+                        <p class="text-sm text-slate-500 italic">Advanced automation & integrations.</p>
                     </div>
-                    <ul class="space-y-4 mb-8 flex-1">
-                        <li class="flex items-start gap-3 text-sm">
+                    <ul class="space-y-4 mb-10 flex-1">
+                        <li class="flex items-start gap-3 text-sm text-slate-600 dark:text-gray-300">
                              <svg class="w-5 h-5 text-tms-pink shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
                              Everything in Starter
                         </li>
-                        <li class="flex items-start gap-3 text-sm">
+                        <li class="flex items-start gap-3 text-sm text-slate-600 dark:text-gray-300">
                              <svg class="w-5 h-5 text-tms-pink shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                             Advanced Fuel Analytics
+                             Live tracking & status automation
                         </li>
-                         <li class="flex items-start gap-3 text-sm">
+                        <li class="flex items-start gap-3 text-sm text-slate-600 dark:text-gray-300">
                              <svg class="w-5 h-5 text-tms-pink shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                             IFTA Reporting
+                             Driver payroll workflows
                         </li>
-                        <li class="flex items-start gap-3 text-sm">
+                        <li class="flex items-start gap-3 text-sm text-slate-600 dark:text-gray-300">
                              <svg class="w-5 h-5 text-tms-pink shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                             QuickBooks Integration
+                             Compliance & doc management
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600 dark:text-gray-300">
+                             <svg class="w-5 h-5 text-tms-pink shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                             Invoicing + QuickBooks integration
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600 dark:text-gray-300">
+                             <svg class="w-5 h-5 text-tms-pink shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                             Advanced reporting & analytics
                         </li>
                     </ul>
-                    <button class="w-full py-3 rounded-xl bg-white dark:bg-black text-black dark:text-white font-bold hover:shadow-lg transition-shadow">Get Started</button>
+                    <button onclick="window.location.href='demo.html'" class="w-full py-4 rounded-xl bg-tms-pink text-white font-bold hover:shadow-xl transition-all shadow-[0_10px_20px_rgba(255,45,117,0.3)]">Request Pricing</button>
                 </div>
 
                 <!-- Enterprise Tier -->
-                <div class="rounded-3xl p-8 bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 backdrop-blur-xl relative flex flex-col hover:-translate-y-2 transition-transform duration-300">
-                    <div class="mb-6">
-                        <div class="text-sm font-bold uppercase tracking-wider text-slate-500 dark:text-gray-400 mb-2">Scale</div>
-                        <div class="text-4xl font-display font-bold text-slate-900 dark:text-white mb-2">Custom</div>
-                        <div class="text-sm text-slate-500">For fleets with 100+ units</div>
+                <div class="rounded-3xl p-10 bg-white dark:bg-slate-950 border border-slate-200 dark:border-white/10 relative flex flex-col hover:border-tms-cyan/50 transition-all group">
+                    <div class="mb-8">
+                        <div class="text-xs font-mono font-black uppercase tracking-[0.2em] text-slate-400 mb-4">Enterprise</div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">High-volume fleets</h3>
+                        <p class="text-sm text-slate-500 italic">Customized power for large fleets.</p>
                     </div>
-                     <ul class="space-y-4 mb-8 flex-1">
+                     <ul class="space-y-4 mb-10 flex-1">
                         <li class="flex items-start gap-3 text-sm text-slate-600 dark:text-gray-300">
-                             <svg class="w-5 h-5 text-purple-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                             Everything in Grow
+                             <svg class="w-5 h-5 text-tms-cyan shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                             Everything in Growth
                         </li>
                         <li class="flex items-start gap-3 text-sm text-slate-600 dark:text-gray-300">
-                             <svg class="w-5 h-5 text-purple-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                             Dedicated Account Manager
-                        </li>
-                         <li class="flex items-start gap-3 text-sm text-slate-600 dark:text-gray-300">
-                             <svg class="w-5 h-5 text-purple-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                             Custom Integrations (API)
+                             <svg class="w-5 h-5 text-tms-cyan shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                             Custom integrations & API access
                         </li>
                         <li class="flex items-start gap-3 text-sm text-slate-600 dark:text-gray-300">
-                             <svg class="w-5 h-5 text-purple-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                             SSO & Advanced Security
+                             <svg class="w-5 h-5 text-tms-cyan shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                             Multi-location permissions
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600 dark:text-gray-300">
+                             <svg class="w-5 h-5 text-tms-cyan shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                             Dedicated onboarding & support
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-slate-600 dark:text-gray-300">
+                             <svg class="w-5 h-5 text-tms-cyan shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                             SLA options & custom reporting
                         </li>
                     </ul>
-                    <button class="w-full py-3 rounded-xl border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white font-bold hover:bg-slate-50 dark:hover:bg-white/5 transition-colors">Contact Sales</button>
+                    <button onclick="window.location.href='demo.html'" class="w-full py-4 rounded-xl border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white font-bold hover:bg-slate-50 dark:hover:bg-white/5 transition-all">Talk to Sales</button>
                 </div>
+            </div>
+
+            <!-- Add-ons -->
+            <div class="mb-24 py-16 px-10 rounded-3xl bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10">
+                <div class="max-w-3xl">
+                    <h2 class="text-2xl font-display font-bold text-slate-900 dark:text-white mb-8 italic">Optional Add-ons</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="flex items-center gap-3 text-slate-600 dark:text-slate-400">
+                            <div class="w-2 h-2 rounded-full bg-tms-cyan"></div>
+                            <span>Additional integrations</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-slate-600 dark:text-slate-400">
+                            <div class="w-2 h-2 rounded-full bg-tms-cyan"></div>
+                            <span>Premium onboarding & training</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-slate-600 dark:text-slate-400">
+                            <div class="w-2 h-2 rounded-full bg-tms-cyan"></div>
+                            <span>Advanced reporting</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-slate-600 dark:text-slate-400">
+                            <div class="w-2 h-2 rounded-full bg-tms-cyan"></div>
+                            <span>Dedicated support manager</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-slate-600 dark:text-slate-400">
+                            <div class="w-2 h-2 rounded-full bg-tms-cyan"></div>
+                            <span>Custom workflows & automation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pricing FAQ -->
+            <div class="max-w-4xl mx-auto py-12">
+                <h2 class="text-3xl font-display font-bold text-slate-900 dark:text-white text-center mb-16 italic">Pricing FAQ</h2>
+                <div class="space-y-8">
+                    <div class="p-8 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-white/10">
+                        <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-3">Do you charge per truck, per user, or per load?</h4>
+                        <p class="text-slate-500 dark:text-slate-400">Pricing is flexible and typically based on fleet size and modules enabled.</p>
+                    </div>
+                    <div class="p-8 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-white/10">
+                        <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-3">Can I use Fuel Portal without TMS?</h4>
+                        <p class="text-slate-500 dark:text-slate-400">Yes. Fuel Portal and TMS can be used independently or together.</p>
+                    </div>
+                    <div class="p-8 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-white/10">
+                        <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-3">Can I switch plans later?</h4>
+                        <p class="text-slate-500 dark:text-slate-400">Absolutely — you can upgrade as your fleet grows.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- End CTA -->
+            <div class="mt-24 text-center">
+                <h2 class="text-3xl font-display font-bold text-slate-900 dark:text-white mb-6">Get a plan tailored to your fleet</h2>
+                <button onclick="window.location.href='demo.html'" class="px-10 py-5 rounded-xl bg-tms-cyan text-slate-900 font-bold hover:shadow-2xl transition-all scale-105">Request Pricing</button>
             </div>
 
         </div>
