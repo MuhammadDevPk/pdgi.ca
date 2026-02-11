@@ -314,19 +314,30 @@
             <!-- FAQ Section -->
             <div class="max-w-3xl mx-auto mb-24">
                 <h2 class="text-3xl font-display font-bold text-center text-slate-900 dark:text-white mb-12">Frequently Asked Questions</h2>
-                <div class="space-y-6">
-                    <div class="p-6 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-white/10">
-                        <h4 class="font-bold text-slate-900 dark:text-white mb-2">Does PDGI support QuickBooks Desktop?</h4>
-                        <p class="text-sm text-slate-600 dark:text-slate-400">We natively support QuickBooks Online; Desktop can be handled via scheduled CSV exports or third-party sync tools.</p>
-                    </div>
-                    <div class="p-6 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-white/10">
-                        <h4 class="font-bold text-slate-900 dark:text-white mb-2">Can I get custom fields in the export?</h4>
-                        <p class="text-sm text-slate-600 dark:text-slate-400">Yes — exports and API payloads can include custom fields for mapping to your back office.</p>
-                    </div>
-                    <div class="p-6 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-white/10">
-                        <h4 class="font-bold text-slate-900 dark:text-white mb-2">How secure are integrations?</h4>
-                        <p class="text-sm text-slate-600 dark:text-slate-400">All integrations use encrypted channels, role-based keys, and logging. Card data is tokenized and handled per PCI standards.</p>
-                    </div>
+                <div class="space-y-4">
+                    <details class="group p-6 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 cursor-pointer">
+                        <summary class="list-none flex justify-between items-center">
+                            <span class="font-bold text-slate-900 dark:text-white">Does PDGI support QuickBooks Desktop?</span>
+                            <svg class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 dark:text-slate-400">We natively support QuickBooks Online; Desktop can be handled via scheduled CSV exports or third-party sync tools.</p>
+                    </details>
+
+                    <details class="group p-6 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 cursor-pointer">
+                        <summary class="list-none flex justify-between items-center">
+                            <span class="font-bold text-slate-900 dark:text-white">Can I get custom fields in the export?</span>
+                            <svg class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 dark:text-slate-400">Yes — exports and API payloads can include custom fields for mapping to your back office.</p>
+                    </details>
+
+                    <details class="group p-6 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 cursor-pointer">
+                        <summary class="list-none flex justify-between items-center">
+                            <span class="font-bold text-slate-900 dark:text-white">How secure are integrations?</span>
+                            <svg class="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </summary>
+                        <p class="mt-4 text-sm text-slate-600 dark:text-slate-400">All integrations use encrypted channels, role-based keys, and logging. Card data is tokenized and handled per PCI standards.</p>
+                    </details>
                 </div>
             </div>
 
